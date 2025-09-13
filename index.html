@@ -1,36 +1,124 @@
-<!-- Dathan's Resume/Portfolio -->
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset = "UTF-8">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <!--<link rel="icon" href="" type="image/png">  FIND ICON TO REPLACE-->
-        <link rel = "stylesheet" href = "CSS/resume.css">
-        <title> Dathan Lang's Portfolio 🖼️</title>
-    </head>
-    
-    <body>
 
-        <!-- Navigation Bar -->
-        <nav>
-            <label class="title">Dathan Lang 🎲</label>
-            <ul>
-            <li><a href="#" class="nav-button">ABOUT</a></li>
-            <li><a href="galleries.html" class="nav-button">GALLERY</a></li>
-            <li><a href="#" class="nav-button">RESOURCES</a></li>
-            <li><a href="#" class="nav-button">PROFILES</a></li>
+<head>
+   <meta charset="utf-8">
+   <link rel="stylesheet" href="webpages/CSS/main.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>
+      Dathan Lang | Home
+   </title>
+   <link rel="icon" type="image/x-icon" href="webpages/Images/dathanAnimeLogo.png">
+</head>
+
+<body>
+    <div class="parallax" id="parallax">
+        <header>
+            <h1>Dathan Lang</h1>
+            <ul id = "contact-info">
+                <li><a href="https://sll.rpi.edu/buildings/blitman-residence-commons">1800 6th Ave, Troy, NY 12180 </a></li>
             </ul>
-        </nav>
+            <ul>
+                <li> <a href = "https://github.com/atypicality" ><img src = "webpages/Images/githubLogo.png" onmouseover="this.src='webpages/Images/githubLogoDark.png';" onmouseout="this.src='webpages/Images/githubLogo.png';"  id = "github" alt="github-logo"></a></li>
+                <li> <a href = "https://www.linkedin.com/in/dathanl/" ><img src = "webpages/Images/linkedinLogo.png" onmouseover="this.src='webpages/Images/linkedinLogoDark.png';" onmouseout="this.src='webpages/Images/linkedinLogo.png';"  id = "linkedin" alt="linkedin-logo"></a></li>
+                <li> <a href = "webpages/resources/lang_resume.pdf" ><img src = "webpages/Images/resumeLogo.png" onmouseover="this.src='webpages/Images/resumeLogoDark.png';" onmouseout="this.src='webpages/Images/resumeLogo.png';"  id = "resume" alt="resume-logo"></a></li>
+                <li> <a href = "mailto:langd4@rpi.edu" ><img src = "webpages/Images/emailLogo.png" onmouseover="this.src='webpages/Images/emailLogoDark.png';" onmouseout="this.src='webpages/Images/emailLogo.png';" id= "email" alt="email-logo"></a></li>
+                <li> <a href="tel:+2674715515"><img src = "webpages/Images/phone.png" onmouseover="this.src='webpages/Images/phoneDark.png';" onmouseout="this.src='webpages/Images/phone.png';" id= "phone" alt="phone-logo"></a></li>
+            </ul>
+        </header>
 
+        <section>
+            <h2> About Me </h2>
+            <div id = "about-me">
+                <ul>
+                    <li>
+                        <div id = "greeting">
+                            <ul>
+                                <li><h3>Hi I'm Dathan! <img src = "webpages/Images/smileEmoji.png" id="emoji" alt="smileyface"> </h3></li>
+                                <li><h3>A little bit about me:</h3> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><p>I'm a CS and ITWS Student @ RPI</p></li>
+                            <li><p>Publicity/Webmaster for <a href="https://rma.union.rpi.edu/">RMA</a></p></li>
+                            <li><p>Active Jazz Pianist and Vibraphonist</p></li>
+                            <li><p>Competitive <a href="https://xerafin.cross-tables.com/results.php?p=27205">Scrabble Player</a></p></li>
+                        </ul>
+                    </li>
+                </ul>
+                <img src = "webpages/Images/selfieMe.jpg" id = "selfie" alut="DathanSelfie">
+            </div>
+        </section>
 
-        <div class="oval">test</div>
+        <section>
+            <h2> Education </h2>
+            <div id = "education">
+                <ul>
+                    <li>
+                        <div class = "activity-item"><h4>Rensselaer Polytechnic Institute</h4> <img src="webpages/Images/opexLogo.jpg" id="opex" alt="opexLogo"> </div>
+                    </li>
+                    <li>
+                        <div class = "activity-item"><h4>Wissahickon High Schoolt</h4><img src="webpages/Images/idTechLogo.png" id="idTech" alt="idTechLogo"></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-        <div id = "education"></div>
+        <section>
+            <h2> Experience </h2>
+            <div id = "experience">
+                <ul>
+                    <li>
+                        <div class = "activity-item"><h4>Software Engineering Intern</h4> <img src="webpages/Images/opexLogo.jpg" id="opex" alt="opexLogo"> </div>
+                        <div class = "activity-item"><h4>AP Capstone Scrabble Research</h4><img src="webpages/Images/upennLogo.jpg" id="upenn" alt="upennLogo"></div>
+                    </li>
+                    <li>
+                        <div class = "activity-item"><h4>AI/ML Student</h4><img src="webpages/Images/idTechLogo.png" id="idTech" alt="idTechLogo"></div>
+                        <div class = "activity-item"><h4>Web Developer for RPI Startup</h4> <img src="webpages/Images/PresentationAssistant.png" id="paLogo" alt="presentationAssistantsLogo"></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-        <div id = "experience"></div>
-
-        <div id = "skills"></div>
-    </body>
-
+        <section>
+            <h2> Projects </h2>
+            <div id= "projects">
+                <ul>
+                    <li>
+                        <div class = "activity-item">
+                            <h4>Personal Website</h4>
+                            <p>- You're on it right now!</p>
+                            <p>- Built using html/css/js</p>
+                            <a href = "https://github.com/atypicality/personal_website">- Link to Repo</a>
+                        
+                        </div>
+                        <div class = "activity-item">
+                            <h4>8th Wonder Website</h4>
+                            <p>- Built for RPI's Kpop Dance Group!</p>
+                            <p>- Built using html/php/css/js </p>
+                            <a href = "https://github.com/atypicality/atypicality.github.io">- Link to Repo</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class = "activity-item">
+                            <h4>Leetcode Solutions</h4>
+                            <p>- Coding Interview Prep!</p>
+                            <p>- Mainly C++/Java/Python</p>
+                            <a href = "https://github.com/atypicality/personal_website">- Link to Repo</a>
+                        </div>
+                        <div class = "activity-item">
+                            <h4>Scoring Jpop/Anime Charts</h4>
+                            <p>- Songs for my JPOP Band</p>
+                            <p>- Used MuseScore Studio 4</p>
+                            <a href = "webpages/resources/Dathan tries mixed nuts.pdf">- Example Score that I'm working on</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="webpages/JavaScript/index.js"></script> 
+</body>
 </html>
