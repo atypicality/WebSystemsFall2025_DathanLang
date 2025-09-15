@@ -390,3 +390,200 @@ body {
     background-attachment: scroll;
     height: 4450px;
 }
+
+/* Responsive Design so Website doesn't look too bad on mobile */
+/* Phones and small screens */
+@media screen and (max-width: 600px) {
+    header {
+        width: 95%;
+        border-radius: 20px;
+    }
+
+    header ul li h1 {
+        font-size: 100%;
+    }
+
+    section {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #selfie {
+        width: 150px;
+        height: 150px;
+        margin-left: 0;
+    }
+
+    #about-me h3, #about-me h4, #about-me p {
+        font-size: 70%;
+    }
+
+    #about-me {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #education h2, #education p, #education h3, #education h4 { 
+        font-size: 70%;
+    }
+
+    #education {
+        padding: 5px;
+    }
+
+    #rpi_logo {
+        margin-right: 300px;
+        margin-bottom: -110px;
+    }
+
+    #wissLogo {
+        margin-right: 320px;
+        margin-bottom: -110px;
+    }
+
+    #experience h2, #experience p, #experience h3, #experience h4 { 
+        font-size: 70%;
+    }
+    
+    #skills h2, #skills p, #skills h3, #skills h4 { 
+        font-size: 70%;
+    }
+
+    #projects h2, #projects p, #projects h3, #projects h4 { 
+        font-size: 70%;
+    }
+
+    .school-info, 
+    .activity-item, 
+    .skills-list {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    #education ul,
+    #experience ul,
+    #projects ul {
+        flex-direction: column;
+    }
+
+    .contact-info li {
+        display: block;
+        margin: 5px 0;
+        font-size: 80%;
+    }
+
+    /* Scale down logos */
+    #opex, #upenn, #idTech, #paLogo, #rpi_logo, #actsLogo, #wissLogo {
+        max-width: 80%;
+        height: auto;
+    }
+
+    #github, #linkedin, #resume, #email, #phone {
+        margin: -20px;
+    }
+
+    #github {
+        max-width: 8%;
+        height: auto;
+    }
+
+    #linkedin {
+        max-width: 7%;
+        height: auto;
+    }
+    
+    #resume {
+        max-width: 7%;
+        height: auto;
+    }
+
+    #email {
+        max-width: 8%;
+        height: auto;
+    }
+    
+    #phone {
+        max-width: 10%;
+        height: auto;
+    }
+
+    body {
+        height: 4650px;
+    }
+}
+
+/* Tablets (medium screens, 601px – 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    header {
+        width: 80%;
+    }
+
+    header ul li h1 {
+        font-size: 100%;
+    }
+
+    section {
+        width: 85%;
+    }
+
+    .school-info, .activity-item, .skills-list {
+        width: 90%;
+    }
+
+    #education ul,
+    #experience ul,
+    #projects ul {
+        flex-wrap: wrap; /* Allow wrapping into new lines */
+        justify-content: center;
+    }
+
+     #github, #linkedin, #resume, #email, #phone {
+        margin: -20px;
+    }
+
+    #github {
+        max-width: 8%;
+        height: auto;
+    }
+
+    #linkedin {
+        max-width: 7%;
+        height: auto;
+    }
+    
+    #resume {
+        max-width: 7%;
+        height: auto;
+    }
+
+    #email {
+        max-width: 8%;
+        height: auto;
+    }
+    
+    #phone {
+        max-width: 10%;
+        height: auto;
+    }
+
+    #rpi_logo {
+        margin-right: 350px;
+        margin-bottom: -130px;
+    }
+
+    #wissLogo {
+        margin-right: 375px;
+        margin-bottom: -120px;
+        height: 50px;
+        width: 45px;
+    }
+
+    .activity-item {
+        width: 450px;
+    }
+
+    body {
+        height: 6700px;
+    }
+}
