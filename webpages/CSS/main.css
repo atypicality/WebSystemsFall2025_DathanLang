@@ -481,11 +481,7 @@ body {
     #projects ul li .activity-item p {
         font-size: 60%;
     }
-
-    #projects a {
-        font-size: 60%;
-    }
-
+    
     /* Scale down logos */
     #opex, #upenn, #idTech, #paLogo, #actsLogo {
         max-width: 40%;
@@ -525,7 +521,7 @@ body {
     }
 
     body {
-        height: 3850px;
+        height: 4650px;
     }
 }
 
