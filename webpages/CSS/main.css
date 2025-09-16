@@ -184,8 +184,6 @@ section {
     width: 90%;
     display: flex;
     justify-content: center;
-    padding-left: auto;
-    padding-right: auto;
 }
 
 .school-info {
@@ -211,8 +209,6 @@ section {
     width: 92%;
     padding-bottom: 10px;
     margin: auto;
-    padding-left: auto;
-    padding-right: auto;
     padding-top: 10px;
     text-align: center;
 }
@@ -230,8 +226,6 @@ section {
     border-radius: 17px;
     width: 90%;
     padding-bottom: 10px;
-    padding-left: auto;
-    padding-right: auto;
     text-align: center;
     padding-bottom: 30px;
 }
@@ -271,8 +265,6 @@ section {
     width: 90%;
     padding-bottom: 10px;
     margin: auto;
-    padding-left: auto;
-    padding-right: auto;
     text-align: left;
     padding-bottom: 30px;
     padding-top: 10px;
@@ -295,8 +287,6 @@ section {
     width: 90%;
     padding-bottom: 10px;
     margin: auto;
-    padding-left: auto;
-    padding-right: auto;
     text-align: center;
 }
 
