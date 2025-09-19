@@ -7,10 +7,28 @@ header {
     background-color: azure;
     border-radius: 35px;
     width: 65%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     opacity: 0.9;
     margin-top: 40px;
+    height: 100%;
+}
+
+header ul {
+    list-style-type: none;
+    margin-top: -15px;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+}
+
+header ul li {
+    margin-right: 15px;
+    margin-left: 15px;
+    display: inline;
+    font-size: 25px;
+    text-shadow: 2px 2px 5px rgb(102, 0, 255);
 }
 
 header ul li h1 {
@@ -21,9 +39,37 @@ header ul li h1 {
     display: inline;
 }
 
-header ul li {
+
+header ul li a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px rgb(102, 0, 255);
+}
+
+header ul li a.active {
+    text-decoration: underline;
+    text-decoration-color:rgb(31, 229, 235);
+    text-shadow: 2px 2px 5px rgb(31, 229, 235);
+}
+
+.contact-info {
+    list-style-type: none;
+    margin-top: -30px;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+}
+
+.contact-info li {
+    display: inline;
+    font-size: 20px;
     margin-right: 15px;
-    margin-left: 15px;
+}
+
+.contact-info li a:hover {
+    color: rgb(243, 243, 246);
 }
 
 section h2 {
@@ -73,56 +119,6 @@ p {
 
 #about-me ul {
     list-style-type: none;
-}
-
-
-header ul {
-    list-style-type: none;
-    margin-top: -15px;
-    padding: 0;
-    overflow: hidden;
-    background: transparent;
-}
-
-.contact-info {
-    list-style-type: none;
-    margin-top: -30px;
-    padding: 0;
-    overflow: hidden;
-    background: transparent;
-    color: black;
-}
-
-.contact-info li {
-    display: inline;
-    font-size: 20px;
-    margin-right: 15px;
-    text-shadow: 2px 2px 5px rgb(102, 0, 255);
-}
-
-.contact-info li a:hover {
-    color: rgb(243, 243, 246);
-}
-
-
-header li {
-    display: inline;
-    font-size: 25px;
-    text-shadow: 2px 2px 5px rgb(102, 0, 255);
-}
-
-header li a {
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    text-shadow: 2px 2px 5px rgb(102, 0, 255);
-}
-
-header li a.active {
-    text-decoration: underline;
-    text-decoration-color:rgb(31, 229, 235);
-    text-shadow: 2px 2px 5px rgb(31, 229, 235);
 }
 
 #github {
@@ -373,225 +369,9 @@ p {
 
 body {
     font-family: bungee;
-    color: rgb(0, 0, 0);
     background-image: url('../Images/background_image2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
     height: 4450px;
-}
-
-/* Responsive Design so Website doesn't look too bad on mobile */
-/* Phones and small screens */
-@media screen and (max-width: 600px) {
-    header {
-        width: 95%;
-        border-radius: 20px;
-    }
-
-    header ul li h1 {
-        font-size: 65%;
-    }
-
-    section {
-        width: 95%;
-        padding: 10px;
-        margin: 5px;
-    }
-
-    #selfie {
-        width: 150px;
-        height: 150px;
-        margin-left: 0;
-    }
-
-    #about-me h3, #about-me h4, #about-me p {
-        font-size: 70%;
-    }
-
-    section h2 {
-        font-size: 110%;
-        margin-bottom: 5px;
-    }
- 
-    #about-me {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    #education h2, #education p, #education h3, #education h4 { 
-        font-size: 60%;
-    }
-
-    #education {
-        padding: 5px;
-    }
-
-    #rpi_logo {
-        margin-right: 380px;
-        margin-bottom: -70px;
-        height: auto;
-        width: 17%;
-    }
-
-    #wissLogo {
-        margin-right: 400px;
-        margin-bottom: -70px;
-        height: auto;
-        width: 13%;
-    }
-
-    #experience h2, #experience p, #experience h3, #experience h4 { 
-        font-size: 50%;
-    }
-    
-    #skills h2, #skills p, #skills h3, #skills h4 { 
-        font-size: 70%;
-    }
-
-    #projects h2, #projects p, #projects h3, #projects h4 { 
-        font-size: 70%;
-    }
-
-    .school-info, 
-    .activity-item, 
-    .skills-list {
-        width: 100%;
-        margin: 10px auto;
-    }
-
-    #education ul,
-    #experience ul,
-    #projects ul {
-        flex-direction: column;
-    }
-
-    .contact-info li {
-        display: block;
-        margin: 5px 0;
-        font-size: 60%;
-    }
-
-    #skills ul li {
-        margin-bottom: 5px;
-        font-size: 70%;
-    }
-
-    #projects ul li .activity-item p {
-        font-size: 60%;
-    }
-    
-    /* Scale down logos */
-    #opex, #upenn, #idTech, #paLogo, #actsLogo {
-        max-width: 40%;
-        height: auto;
-        margin-bottom: -22px;
-    }
-
-    #github, #linkedin, #resume, #email, #phone {
-        margin-left: -30px;
-        margin-right: -30px;
-        margin-bottom: -10px;
-    }
-
-    #github {
-        max-width: 7%;
-        height: auto;
-    }
-
-    #linkedin {
-        max-width: 6%;
-        height: auto;
-    }
-    
-    #resume {
-        max-width: 6%;
-        height: auto;
-    }
-
-    #email {
-        max-width: 7%;
-        height: auto;
-    }
-    
-    #phone {
-        max-width: 9%;
-        height: auto;
-    }
-
-    body {
-        height: 7650px;
-    }
-}
-
-/* Tablets (medium screens, 601px – 1024px) */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-    header {
-        width: 80%;
-    }
-
-    header ul li h1 {
-        font-size: 100%;
-    }
-
-    section {
-        width: 85%;
-    }
-
-    .school-info, .activity-item, .skills-list {
-        width: 90%;
-    }
-
-    #education ul,
-    #experience ul,
-    #projects ul {
-        flex-wrap: wrap; /* Allow wrapping into new lines */
-        justify-content: center;
-    }
-
-     #github, #linkedin, #resume, #email, #phone {
-        margin: -20px;
-    }
-
-    #github {
-        max-width: 8%;
-        height: auto;
-    }
-
-    #linkedin {
-        max-width: 7%;
-        height: auto;
-    }
-    
-    #resume {
-        max-width: 7%;
-        height: auto;
-    }
-
-    #email {
-        max-width: 8%;
-        height: auto;
-    }
-    
-    #phone {
-        max-width: 10%;
-        height: auto;
-    }
-
-    #rpi_logo {
-        visibility: hidden;
-    }
-
-    #wissLogo {
-        visibility: hidden;
-    }
-
-    .activity-item {
-        width: 450px;
-    }
-
-    body {
-        height: 6700px;
-    }
 }
