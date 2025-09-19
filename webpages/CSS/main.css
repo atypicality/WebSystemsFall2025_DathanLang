@@ -9,7 +9,6 @@ header {
     text-align: center;
     opacity: 0.9;   
     margin-top: 40px;
-    height: 220px;
 }
 
 header ul {
@@ -371,12 +370,13 @@ p {
 }
 
 body {
+    line-height: 60px;
     font-family: bungee;
     background-image: url('../Images/background_image2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
-    height: 4450px;
+    height: 4750px;
 }
 
 /* This is for background animation effects */
