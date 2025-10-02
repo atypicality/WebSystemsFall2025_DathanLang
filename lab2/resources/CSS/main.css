@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+#header {
+    margin-top: 100px;
+    margin-bottom: auto;
+    background-color: rgb(158, 188, 219);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+ul {
+    margin-left: 19.5%;
+    margin-right: 19.5%;
+}
+
+#weatherResults {
+    margin-top: 20px;
+    padding: 10px;
+    width: 40%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #e6f2ff;
+    visibility: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#musicResults {
+    margin-bottom: 20px;
+}
+
+.song {
+    margin-top: 20px;
+    padding: 10px;
+    width: 40%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #e6f2ff;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#musicCloudLogo {
+    width: 50px;
+    height: auto;
+    margin-bottom: -15px;
+    margin-right: 5px;
+}
+
+#getWeatherButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #9e6e6e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#getWeatherButton:hover {
+    background-color: #8b5a5a;
+}
