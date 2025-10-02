@@ -12,7 +12,6 @@ async function getSpotifyToken(callback) {
             client_secret: "7598a7ca29a34df19b717c537d33951b"
         },
         success: function(response) {
-            console.log("Access token:", response.access_token);
             callback(response.access_token);
             // you can now use response.access_token in other requests
         },
@@ -95,7 +94,6 @@ function getSongsFromGenre(genre)
     getSpotifyToken(function(token) {
         const url = "https://api.spotify.com/v1/search";  
 
-        console.log("Using token:", token);
         $.ajax({
             url: url,
             method: "GET",
