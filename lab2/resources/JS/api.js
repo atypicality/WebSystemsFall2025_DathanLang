@@ -61,7 +61,6 @@ function getCurrentWeather(lat, lon) {
         $("#musicResults").css("visibility", "visible");
 
       console.log("Weather data:", data);
-        //pick out what you want
         const city = data.name;
         const country = data.sys.country;
         const temp = data.main.temp;
@@ -73,7 +72,9 @@ function getCurrentWeather(lat, lon) {
         //build HTML
         const html = `
             <h2>Weather in ${city}, ${country}</h2>
+            <div id="weatherIcon">
             <p><img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}"></p>
+            </div>
             <p><strong>Temperature 🌡️:</strong> ${temp} °F</p>
             <p><strong>Humidity 💦:</strong> ${humidity}%</p>
             <p><strong>Condition ☁️:</strong> ${desc}</p>
