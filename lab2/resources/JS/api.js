@@ -13,7 +13,6 @@ async function getSpotifyToken(callback) {
         },
         success: function(response) {
             callback(response.access_token);
-            // you can now use response.access_token in other requests
         },
         error: function(xhr, status, error) {
             console.error("Error:", status, error);
