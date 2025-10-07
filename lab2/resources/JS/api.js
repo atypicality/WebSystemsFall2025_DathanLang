@@ -1,5 +1,6 @@
-//we get spotify api token using client credentials (this uses )
-async function getSpotifyToken(callback) {
+//we get spotify api token using client credentials
+function getSpotifyToken(callback) 
+{
     $.ajax({
         url: "https://accounts.spotify.com/api/token",
         method: "POST",
@@ -24,7 +25,8 @@ weatherButton = document.getElementById("getWeatherButton");
 weatherButton.addEventListener("click", getWeather);
 
 //this gets location from computer using geolocation api
-function getWeather() {
+function getWeather() 
+{
     console.log("Getting location...");
     if(navigator.geolocation) {
         console.log("Getting position...");
@@ -39,7 +41,8 @@ function getWeather() {
     }
 }
 
-function getCurrentWeather(lat, lon) {
+function getCurrentWeather(lat, lon) 
+{
   const apiKey = "6ab771a9c5429bd3ade384b2edb9cef2";
   const url = "https://api.openweathermap.org/data/2.5/weather";
 
@@ -53,7 +56,8 @@ function getCurrentWeather(lat, lon) {
       units: "imperial",  
       appid: apiKey
     },
-    success: function(data) {
+    success: function(data) 
+    {
         
         //update visibility of results divs
         $("#weatherResults").css("visibility", "visible");
@@ -82,7 +86,8 @@ function getCurrentWeather(lat, lon) {
         getSongsFromGenre(desc);  //basically find a genre based on weather description
         document.getElementById("weatherResults").innerHTML = html;
     },
-    error: function(xhr, status, error) {
+    error: function(xhr, status, error) 
+    {
       console.error("Error fetching weather:", status, error);
     }
   });
