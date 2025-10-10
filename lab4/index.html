@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weather + Anime App</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #83a4d4, #b6fbff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 0;
+  transition: background 1s ease;
+}
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  padding: 30px;
+  width: 340px;
+  text-align: center;
+  margin: 20px 0;
+}
+input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #0078ff;
+  color: white;
+  cursor: pointer;
+  margin: 4px;
+  transition: 0.3s;
+}
+button:hover { background: #005dc1; }
+#output { margin-top: 20px; }
+img {
+  margin-top: 10px;
+  border-radius: 10px;
+  width: 150px;
+}
+hr { margin: 20px 0; }
+.summary {
+  font-style: italic;
+  margin-top: 10px;
+  color: #333;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h2>🌤 Weather Finder</h2>
+  <input type="text" id="city" placeholder="Enter city name">
+  <button id="weatherBtn">Get Weather & Anime</button>
+  <div id="output"></div>
+</div>
+
+<script>
+const weatherBtn = document.getElementById("weatherBtn");
+const output = document.getElementById("output");
+const weatherAPIKey = "6ab771a9c5429bd3ade384b2edb9cef2"; // Replace with your key
+
+// Map weather conditions to search-friendly keywords
+const weatherSearchMap = {
+  Clear: "Sun",
+  Rain: "Rain",
+  Thunderstorm: "Thunder",
+  Snow: "Snow",
+  Clouds: "Sky",
+  Mist: "Fog"
+};
+
+function shortBio(text) {
+  if (!text) return "No biography available.";
+  const sentences = text.split(/(?<=[.!?])\s+/);
+  return sentences.slice(0, 2).join(" ");
+}
+
+function updateBackground(condition) {
+  const gradients = {
+    Clear: "linear-gradient(to right, #fbc2eb, #a6c1ee)",
+    Rain: "linear-gradient(to right, #4b6cb7, #182848)",
+    Thunderstorm: "linear-gradient(to right, #141E30, #243B55)",
+    Snow: "linear-gradient(to right, #83a4d4, #b6fbff)",
+    Clouds: "linear-gradient(to right, #bdc3c7, #2c3e50)",
+    Mist: "linear-gradient(to right, #606c88, #3f4c6b)"
+  };
+  document.body.style.background = gradients[condition] || "#83a4d4";
+}
+
+weatherBtn.addEventListener("click", async () => {
+  const city = document.getElementById("city").value.trim();
+  if (!city) {
+    output.innerHTML = "<p>Please enter a city name.</p>";
+    return;
+  }
+
+  try {
+    // First fetch to get country & weather
+    const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherAPIKey}`
+    );
+    const data = await res.json();
+    if (data.cod !== 200) {
+      output.innerHTML = `<p>⚠️ ${data.message}</p>`;
+      return;
+    }
+
+    const units = data.sys.country === "US" ? "imperial" : "metric";
+    const tempUnit = units === "imperial" ? "°F" : "°C";
+    const speedUnit = units === "imperial" ? "mph" : "m/s";
+
+    // Fetch again with correct units for accurate temperature
+    const weatherRes = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherAPIKey}&units=${units}`
+    );
+    const weatherData = await weatherRes.json();
+    const condition = weatherData.weather[0].main;
+    updateBackground(condition);
+
+    // Determine search term
+    const searchTerm = weatherSearchMap[condition] || condition;
+
+    // Search Jikan for anime character matching weather
+    const searchRes = await fetch(`https://api.jikan.moe/v4/characters?q=${searchTerm}&limit=1`);
+    const searchData = await searchRes.json();
+    let char = searchData.data[0];
+
+    if (!char) {
+      output.innerHTML = `<h3>${weatherData.name}, ${weatherData.sys.country}</h3>
+      <p>🌡 ${weatherData.main.temp} ${tempUnit}</p>
+      <p>☁️ ${weatherData.weather[0].description}</p>
+      <p>💨 Wind: ${weatherData.wind.speed} ${speedUnit}</p>
+      <hr><p>No anime character found for "${searchTerm}"</p>`;
+      return;
+    }
+
+    output.innerHTML = `
+      <h3>${weatherData.name}, ${weatherData.sys.country}</h3>
+      <p>🌡 ${weatherData.main.temp} ${tempUnit}</p>
+      <p>☁️ ${weatherData.weather[0].description}</p>
+      <p>💨 Wind: ${weatherData.wind.speed} ${speedUnit}</p>
+      <hr>
+      <h3>Anime Character</h3>
+      <h4>${char.name}</h4>
+      <img src="${char.images.jpg.image_url}" alt="${char.name}">
+      <p>${shortBio(char.about)}</p>
+      <p class="summary">💡 Character name relates to current weather: "${searchTerm}"</p>
+    `;
+
+  } catch (err) {
+    output.innerHTML = "<p>Error fetching data. Please try again.</p>";
+    console.error(err);
+  }
+});
+</script>
+</body>
+</html>
