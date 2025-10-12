@@ -1,4 +1,4 @@
-#PROMPTS THAT I USED:
+## PROMPTS THAT I USED:
 
 I want you to create the html section for a weather app that queries from openweather api and make sure when you press it, have it connect with a different api relating to anime characters
 
