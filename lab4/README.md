@@ -23,5 +23,3 @@ it seems that you havent fix the names can we instead just sear for anime charac
 when its cloudy it choses a character that doesnt exist can you choose another one
 
 can you replace the whole code please
-
-#MAIN CHALLENGES:
