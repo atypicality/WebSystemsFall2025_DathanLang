@@ -1,0 +1,197 @@
+/* CSS for the home page of my restaurant */
+
+/* Navigation Bar */
+/* This code styles the links and sections of the page*/
+nav {
+  z-index: 1000;
+  box-sizing: border-box;
+  background-color: rgb(247, 255, 250);
+  border-top: 2px solid rgb(98, 65, 217);
+  border-bottom: 2px solid rgb(98, 65, 217);
+  border-style: groove  ;
+  border-left: none;
+  border-right: none;
+  height: 13vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position:fixed;
+}
+
+.navbar-dimmed {
+  opacity: 0.75;
+  transition: opacity 0.5s ease;
+}
+
+.title {  
+  color: rgb(113, 98, 253);
+  font-size: 1.8vw;
+  font-weight: bold;
+  margin-left: 6vw;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  background-color: rgb(113, 98, 253);
+  color: white;
+  font-size: 1vw;
+  padding: 1.2vh 3.6vh;
+  border-radius: 2vw;
+  text-decoration: none;
+  font-weight: 550;
+  margin-right: 1.5vw;
+}
+
+nav ul li a.nav-button:hover {
+  background-color: #9385ff; 
+}
+
+
+/* WELCOME SECTION */
+/* This code styles the front page of the website (intro) */
+#gradientBox {
+  width: 100%;
+  padding-top: 15vh;
+  padding-bottom: 1vh;
+    background: linear-gradient(to right, rgb(194, 170, 255), rgb(246, 233, 233));
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#bigTitle {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  font-size: 5.3vw;
+  color: rgb(113, 98, 253);
+  font-weight: bold;
+}
+
+#description {
+  box-sizing: border-box;
+  flex-direction: row;
+  display: flex;
+}
+
+#descriptionWrite{
+  margin-top: 6vh;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.5vw;
+  max-width: 45vw; 
+  text-align: center;
+  font-weight: lighter;
+  margin-left: 1vw;
+}
+
+/* MENU SECTION*/
+/* This code styles the menu of my restaurant and gives more visual flare*/
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.menuTable {
+  width: 70%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(208, 199, 208, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.menuTable thead {
+  background-color: rgb(98, 65, 217);
+  color: white;
+}
+
+.menuTable th,
+.menuTable td {
+  padding: 10px 20px;
+  text-align: center;
+}
+
+/* have colors alternate*/
+.menuTable tr:nth-child(even) {
+  background-color: #efe9ff;
+}
+
+.menuTable tr:hover {
+  background-color: #9f93e0;
+  transition: background-color 0.3s ease;
+}
+
+/* Footer Section*/
+/* This code styles the footer section of the website */
+#footer {
+  background: rgb(194, 170, 255);
+  color: black;
+  text-align: center;
+  padding: 0.5vw 0;
+  position: relative;
+  width: 100%;
+}
+
+/* General styles*/
+p { 
+  font-family: Fantasy;
+}
+
+body {
+  margin:0;
+  padding: 0;
+  font-family: Fantasy;
+}
+
+h1 {
+    text-align: center;
+    color: #5a47ed;
+    font-family: Fantasy;
+}
+
+h3 { 
+    text-align: center;
+    font-family: Fantasy;
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* Fade and Fly Effect for Gallery*/    
+@keyframes galleryFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1; 
+    transform: translateY(20px);
+  }
+}
+
+/* Fade and Fly Effect for Rest of Page */    
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+#gallery {
+  animation: galleryFadeIn 1.5s ease forwards;
+}
+
+#bigTitle, table, #descripWrite, footer p, ul, li, h1, h3 {
+  animation: textFadeIn 1.5s ease forwards;
+}

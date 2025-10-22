@@ -1,0 +1,2 @@
+## Choices and Considerations:
+To improve styling and creativity applied animation effects in cs and js so that on load text fade in and fly down. Also made nav bar become semi visible when scrolling. In addition, to help with user interaction I also applied color changes to things in the table and nav bar to show when users are interacting with said element. Finally searched up online how to apply styling to specific children. (https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child).

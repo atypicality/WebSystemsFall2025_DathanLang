@@ -1,0 +1,40 @@
+{
+    "menu": [
+        {
+            "name": "Curry Chicken Ramen",
+            "description": "Roasted chicken, fried onion, cabbage, scallion, and marinated egg with curry broth.",
+            "category": "non-vegetarian",
+            "cuisine": "Japanese",
+            "image": "resources/ramen.jpeg",
+            "ingredients": "chicken, onion, cabbage, scallion, egg, curry broth, peppers",
+            "price": 17.75
+        },
+        {
+            "name": "Margherita Pizza",
+            "description": "Flavourful Neapolitan pizza with tasteful toppings representing the Italian flag.",
+            "category": "vegetarian",
+            "cuisine": "Italian",
+            "image": "resources/pizza.jpg",
+            "ingredients": "dough, tomatoes, mozzarella, basil, virgin olive oil",
+            "price": 14.99
+        },
+        {
+            "name": "Couscous Salad",
+            "description": "Fresh and refreshing mediterranean salad for the mind and body.",
+            "category": "vegan",
+            "cuisine": "Moroccan",
+            "image": "resources/salad.jpg",
+            "ingredients": "Couscous, olive oil, lemon, bell peppers, cucumber, red onion, parsley, mint",
+            "price": 9.99
+        },
+        {
+            "name": "Spicy Tuna Sushi",
+            "description": "Makizushi roll that contains fresh raw tuna, and a spicy twist of mayo and sriracha.",
+            "category": "non-vegetarian",
+            "cuisine": "Japanese",
+            "image": "resources/sushi.jpg",
+            "ingredients": "tuna, mayo, sriracha, rise, seaweed, avocado",
+            "price": 12.99
+        }
+    ]
+}
