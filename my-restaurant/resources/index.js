@@ -2,30 +2,40 @@
 //first find where we add data and then get said data from favoriteFood.json
 
 let menuSection = document.getElementById("menu");
-fetch('data/favoriteFood.json')
-    .then(response => response.json())
-    .then(data => {
-        var html = "";
-        //loop through each menu item and add data to table 
-        for (let i = 0; i < data.menu.length; ++i) 
-        {
-            html += 
-            `
-            <tr>
-                <td>${data.menu[i].name}</td>
-                <td><img src="${data.menu[i].image}" alt="${data.menu[i].name}  "></td>
-                <td>$${data.menu[i].price}</td>
-                <td>Contains: ${data.menu[i].ingredients}</td>
-                <td>${data.menu[i].description}</td>
-                <td>${data.menu[i].category}</td>
-                <td>${data.menu[i].cuisine}</td>
-            </tr>
-            `;
+
+//make get request
+$(document).ready(function() {
+    $.ajax({
+        url: 'data/favoriteFood.json',
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            
+            var html = "";
+            //loop through each menu item and add data to table 
+            for (let i = 0; i < data.menu.length; ++i) 
+            {
+                html += 
+                `
+                <tr>
+                    <td>${data.menu[i].name}</td>
+                    <td><img src="${data.menu[i].image}" alt="${data.menu[i].name}  "></td>
+                    <td>$${data.menu[i].price}</td>
+                    <td>Contains: ${data.menu[i].ingredients}</td>
+                    <td>${data.menu[i].description}</td>
+                    <td>${data.menu[i].category}</td>
+                    <td>${data.menu[i].cuisine}</td>
+                </tr>
+                `;
+            }
+            //update html with table
+            menuSection.innerHTML = html;
+        },
+        error: function(xhr, status, error) {
+            console.error("error loading data :(", error);
         }
-        //update html with table
-        menuSection.innerHTML = html;
-    })
-    .catch(error => console.error('Error:', error));
+    });
+});
 
 
 /*
@@ -41,4 +51,3 @@ window.addEventListener("scrollend", (event) => {
     const navbar = document.querySelector("nav");
     navbar.classList.remove('navbar-dimmed');
 });
-
