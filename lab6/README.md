@@ -1,0 +1,6 @@
+# ITWS2110-S25 LABS 6| Dathan Lang 
+
+## Answers to PHP Questions
+- 1 So my classes: Subtraction, Multiplication, and Division are essentially the same for Addition where it takes two parameters and returns the corresponding math operation of those two numbers. For my methods its an if chain where we check each operation to see it that was posted. In terms of flow of execution we check for addition, then subtraction, then multiplication, and then division, and once we know which operation, we call the specific function. 
+- 2 Get may be better than Post because it does cache-ing so that after doing certain calls, it will remember the returns, however this comes at the downside that get can only have limited data length and are not as well designed for security.
+- 3 It may be better if we reduce the methods used so that add can be used for subtraction when we make one of the paramenters negative. This can also be applied for division by multiplying by reciprocal. We could also just have the code just be used straight into the button value.
