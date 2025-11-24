@@ -1,0 +1,166 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1deb5ubuntu1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Nov 23, 2025 at 09:31 PM
+-- Server version: 8.0.44-0ubuntu0.22.04.1
+-- PHP Version: 8.1.2-1ubuntu2.22
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `ITWS2110-Fall2025-langd4-Quiz2`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projectMembership`
+--
+
+CREATE TABLE `projectMembership` (
+  `projectId` int UNSIGNED NOT NULL,
+  `memberId` int UNSIGNED NOT NULL,
+  `joined_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `projectMembership`
+--
+
+INSERT INTO `projectMembership` (`projectId`, `memberId`, `joined_at`) VALUES
+(1, 1, '2025-11-23 22:56:03'),
+(1, 5, '2025-11-23 22:56:04'),
+(1, 9, '2025-11-23 22:56:04'),
+(2, 1, '2025-11-23 22:58:54'),
+(2, 6, '2025-11-23 22:58:54'),
+(2, 10, '2025-11-23 22:58:54'),
+(3, 1, '2025-11-24 02:28:23'),
+(3, 2, '2025-11-24 02:28:24'),
+(3, 3, '2025-11-24 02:28:24'),
+(3, 4, '2025-11-24 02:28:24'),
+(3, 8, '2025-11-24 02:28:24'),
+(3, 9, '2025-11-24 02:28:24'),
+(4, 2, '2025-11-24 02:29:26'),
+(4, 5, '2025-11-24 02:29:26'),
+(4, 9, '2025-11-24 02:29:26'),
+(4, 11, '2025-11-24 02:29:26');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projects`
+--
+
+CREATE TABLE `projects` (
+  `projectId` int UNSIGNED NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`projectId`, `name`, `description`) VALUES
+(1, '8w project', '8w new website'),
+(2, 'Web Systems Test Project', 'test'),
+(3, 'Stonkly', 'The Best RPI analyzer for ETF Data '),
+(4, 'HackRPI Website', 'Helped students with finding information in the DCC and also had a cool minigame.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `userId` int UNSIGNED NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `nickName` varchar(50) DEFAULT NULL,
+  `password_hash` char(64) NOT NULL,
+  `password_salt` char(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userId`, `firstName`, `lastName`, `nickName`, `password_hash`, `password_salt`) VALUES
+(1, 'Dathan', 'Lang', 'DMONEY', 'b53dae3e8ddea51f49c123eb44548de938b2dfa136d807183f1553e6a48ee01e', '0033b84ec5a1a9a594baf84ada8b78bf'),
+(2, 'Lala', 'Liu', 'The Gambler', 'e26c0a884d97ebcf1c9be845f4f9a5747c5e80b75c796b998bdc8224ba17d49c', '49ea67d94e19bedf6c9fcfe5e632a990'),
+(3, 'So Mey', 'Dong', 'gachaaddict', '61fd182e8ef67ef8ef5c1730639184e7a87774e593c16f206ac43e2819fa44a6', '2362643dee15a67024cda3fa495f0120'),
+(4, 'Zhimin', 'Jiang', 'Zdog', '4d43812a56bda063846f5a98b5f8e64f90b2f5697d2a9a4e791d468b5661a397', 'dc32f6c5f75d57a86f9fa3b4d7da47f1'),
+(5, 'Ethan', 'Kusse', 'linkedinwarrior', 'd9588f7e26c5357973531fa2a9140ce85870685e9921348cb36351361b1ecfdd', '98f1ad8ffbc8db2a600ae28d49f8fdd0'),
+(6, 'Juniper', 'Huang', 'bestTA', '1ac5e2aad63a334b1226611f6c70e2eb95fd38dd281c7c93b85452e98a3cccc6', '28c3298c6d9eba693333acc0cda9d914'),
+(7, 'Thilanka', 'Munasinghe', 'bestTeacher', '5d8dc56a8f1dc2d7442d0a580d64a3453bd8e0ec4db5386c03a7a0fb2bb9ff50', '98e4404d2836576f991ff2ecdbdaa484'),
+(8, 'Oliver', 'Crotty', 'crotto', '9ed61926796acb5c6680355bdcb4beea3439b471001f09db3ae56064a00d64f5', '707afe5b5093ec044b7ffcc790c4abab'),
+(9, 'Jodie', 'Cho', 'the project manager', 'edc7e02b89aca9648385fdee933d3a6d52a5e1be1d41716249fb45c704cff806', '83ec7fda986be6719b417d51d9c8a708'),
+(10, 'Kelly', 'Eng', 'hamster0', '070789984dffa1c903a5dfbccf7b55ff4c4bd4686d08b2cfae2741265e0c66f7', 'cbfb836e9f3cf736e64e9656dc934ea8'),
+(11, 'Rick', 'Przzckzckzcki', 'Ritchie', 'd0590c3cbcc5208250489861a6520d11fb2fda73dd4ebf48f6601d4c8d01b198', '1fe21d33e810faf3a6b056f232ec6f9d'),
+(12, 'Morwen', 'Xu', 'More Wins', 'e09886189754b7e68d8580177fd32f7d2aeef732ed193d4714b5ddf9716cdaa7', '4797b97cdea02cf355e0b6251227ca4c');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `projectMembership`
+--
+ALTER TABLE `projectMembership`
+  ADD PRIMARY KEY (`projectId`,`memberId`),
+  ADD KEY `memberId` (`memberId`);
+
+--
+-- Indexes for table `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`projectId`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`userId`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `projects`
+--
+ALTER TABLE `projects`
+  MODIFY `projectId` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `userId` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `projectMembership`
+--
+ALTER TABLE `projectMembership`
+  ADD CONSTRAINT `projectMembership_ibfk_1` FOREIGN KEY (`projectId`) REFERENCES `projects` (`projectId`) ON DELETE CASCADE,
+  ADD CONSTRAINT `projectMembership_ibfk_2` FOREIGN KEY (`memberId`) REFERENCES `users` (`userId`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
